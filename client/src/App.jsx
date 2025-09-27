@@ -1,17 +1,16 @@
-// import { useState } from 'react'
-// import './App.css'
-import {BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register';
+import './App.css'
 
 function App() {
-  
   return (
     <Router>
       <Routes>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/register" element = { < Register />}/>
       </Routes>
-    </Router>
+    </Router>    
   );
 }
 
-export default App
+export default App;
