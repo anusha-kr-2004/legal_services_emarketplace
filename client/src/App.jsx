@@ -1,34 +1,57 @@
-import { useEffect, useState } from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Services from './pages/Services';
+import ServiceDetails from './pages/ServiceDetails';
+import Dashboard from './pages/Dashboard';
+import AddService from './pages/AddService';
+import Profile from './pages/Profile';
+import Leaderboard from './pages/Leaderboard';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-  const [apiStatus, setApiStatus] = useState('loading')
-
-  useEffect(() => {
-    const baseUrl = import.meta.env.VITE_API_URL
-    if (!baseUrl) {
-      console.error('VITE_API_URL is not set. Create client/.env with VITE_API_URL=http://localhost:5000')
-      setApiStatus('config-missing')
-      return
-    }
-    fetch(baseUrl + '/health')
-      .then((r) => r.json())
-      .then(() => setApiStatus('ok'))
-      .catch(() => setApiStatus('offline'))
-  }, [])
-
   return (
-    <div style={{ fontFamily: 'system-ui, Arial', padding: 24 }}>
-      <h1>Legal Services eMarketplace</h1>
-      <p>Status: {apiStatus}</p>
-      {apiStatus === 'config-missing' && (
-        <p style={{ color: '#b91c1c' }}>
-          Missing VITE_API_URL. Set it in client/.env (e.g., VITE_API_URL=http://localhost:5000) and restart dev server.
-        </p>
-      )}
-    </div>
-  )
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/service/:id" element={<ServiceDetails />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/add-service"
+          element={
+            <PrivateRoute>
+              <AddService />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
-
-
+export default App;

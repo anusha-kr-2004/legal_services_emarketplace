@@ -1,0 +1,108 @@
+.service-details-page {
+  padding: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-details-hero {
+  background: linear-gradient(135deg, #312e81, #1d4ed8, #22d3ee);
+  border-radius: 32px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  color: #f8fafc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.service-details-hero h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.service-perks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.service-perks li {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 16px;
+  padding: 0.65rem 1rem;
+}
+
+.service-details-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.service-details-card,
+.booking-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.service-details-card ul {
+  padding-left: 1.2rem;
+}
+
+.booking-card {
+  align-self: start;
+  position: sticky;
+  top: 90px;
+}
+
+.booking-state {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.booking-state.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.booking-state.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.service-details-state {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.service-details-state.error {
+  background: #fee2e2;
+}
+
+@media (max-width: 1024px) {
+  .service-details-body {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    position: static;
+  }
+}
+

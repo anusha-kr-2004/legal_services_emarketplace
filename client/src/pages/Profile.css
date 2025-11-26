@@ -1,0 +1,133 @@
+.profile-page {
+  padding: 2rem clamp(1.5rem, 6vw, 4rem);
+  background: #f8fafc;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-card h1 {
+  margin-bottom: 0.25rem;
+}
+
+.profile-role {
+  color: #475569;
+}
+
+.profile-details {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.profile-grid article {
+  padding: 1rem;
+  border-radius: 16px;
+  background: #f1f5f9;
+}
+
+.profile-grid .label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 1px;
+  margin-bottom: 0.35rem;
+}
+
+.profile-grid .value {
+  font-weight: 600;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.profile-ratings {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.profile-ratings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.profile-ratings__average {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.profile-ratings__table-wrapper {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+}
+
+.profile-ratings table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.profile-ratings th,
+.profile-ratings td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-ratings th {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.profile-ratings td {
+  color: #0f172a;
+}
+
+.profile-ratings tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-ratings td:nth-child(2) {
+  font-weight: 600;
+  color: #c2410c;
+}
+
+
+

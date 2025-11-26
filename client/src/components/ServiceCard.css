@@ -1,0 +1,38 @@
+.service-card {
+  background: #fff;
+  box-shadow: 0 4px 14px #dbeafe;
+  border-radius: 10px;
+  width: 300px;
+  padding: 1.2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition:box-shadow 0.2s, transform 0.2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 28px #93c5fd;
+  transform: translateY(-4px);
+}
+
+.service-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+}
+
+.book-btn {
+  margin-top: auto;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.book-btn:hover {
+  background: #1e40af;
+}

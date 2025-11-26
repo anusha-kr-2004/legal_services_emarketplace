@@ -1,0 +1,65 @@
+.services-page {
+  padding: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.services-hero {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.services-hero h1 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.services-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-width: 280px;
+}
+
+.services-controls input,
+.services-controls select {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 23, 42, 0.35);
+  color: #fff;
+}
+
+.services-controls select {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+.services-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.services-state.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+

@@ -1,0 +1,17 @@
+footer {
+  background: #2563eb;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
