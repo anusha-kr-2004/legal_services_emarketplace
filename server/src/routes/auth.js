@@ -16,7 +16,21 @@ router.post('/register', async (req, res) => {
 		if (existing) return res.status(409).json({ message: 'User already exists' });
 		const passwordHash = await bcrypt.hash(password, 10);
 		const user = await User.create({ fullName, email, mobile, passwordHash, role });
-		return res.status(201).json({ id: user._id, email: user.email });
+		const token = jwt.sign(
+			{ sub: user._id.toString(), role: user.role },
+			process.env.JWT_SECRET || 'dev_secret',
+			{ expiresIn: '7d' }
+		);
+		return res.status(201).json({
+			token,
+			user: {
+				id: user._id,
+				fullName: user.fullName,
+				email: user.email,
+				mobile: user.mobile,
+				role: user.role,
+			},
+		});
 	} catch (err) {
 		return res.status(500).json({ message: 'Registration failed' });
 	}
@@ -29,8 +43,21 @@ router.post('/login', async (req, res) => {
 		if (!user) return res.status(401).json({ message: 'Invalid credentials' });
 		const ok = await bcrypt.compare(password, user.passwordHash);
 		if (!ok) return res.status(401).json({ message: 'Invalid credentials' });
-		const token = jwt.sign({ sub: user._id.toString(), role: user.role }, process.env.JWT_SECRET || 'dev_secret', { expiresIn: '7d' });
-		return res.json({ token, user: { id: user._id, fullName: user.fullName, role: user.role } });
+		const token = jwt.sign(
+			{ sub: user._id.toString(), role: user.role },
+			process.env.JWT_SECRET || 'dev_secret',
+			{ expiresIn: '7d' }
+		);
+		return res.json({
+			token,
+			user: {
+				id: user._id,
+				fullName: user.fullName,
+				email: user.email,
+				mobile: user.mobile,
+				role: user.role,
+			},
+		});
 	} catch (_err) {
 		return res.status(500).json({ message: 'Login failed' });
 	}
